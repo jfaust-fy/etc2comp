@@ -110,7 +110,8 @@ namespace Etc
 			ETC2_SRGB8 = 0x9275,
 			ETC2_RGB8A1 = 0x9276,
 			ETC2_SRGB8_PUNCHTHROUGH_ALPHA1 = 0x9277,
-			ETC2_RGBA8 = 0x9278
+			ETC2_RGBA8 = 0x9278,
+            ETC2_SRGBA8 = 0x9279
 		};
 
 		enum class BaseInternalFormat

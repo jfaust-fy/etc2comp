@@ -67,7 +67,7 @@ class Commands
 {
 public:
 
-	static const unsigned int MIN_JOBS = 8;
+	static const unsigned int MIN_JOBS = 1;
 
 	Commands(void)
 	{
@@ -162,7 +162,7 @@ int main(int argc, const char * argv[])
 
 		// Calculate the maximum number of possible mipmaps
 		{
-			int dim = (uiSourceWidth < uiSourceHeight)?uiSourceWidth:uiSourceHeight;
+			int dim = (uiSourceWidth > uiSourceHeight)?uiSourceWidth:uiSourceHeight;
 			int maxMips = 0;
 			while(dim >= 1)
 			{
@@ -796,7 +796,7 @@ void Commands::PrintUsageMessage(void)
 	printf("    -errormetric <error_metric>   specify the error metric, the options are\n");
 	printf("                                  rgba, rgbx, rec709, numeric and normalxyz\n");
 	printf("    -format <etc_format>          ETC1, RGB8, SRGB8, RGBA8, SRGB8, RGB8A1,\n");
-	printf("                                  SRGB8A1 or R11\n");
+	printf("                                  SRGB8A1 or (SIGNED_)R11, (SIGNED_)RG11\n");
 	printf("    -help                         prints this message\n");
 	printf("    -jobs or -j <thread_count>    specifies the number of threads (default=1)\n");
 	printf("    -normalizexyz                 normalize RGB to have a length of 1\n");

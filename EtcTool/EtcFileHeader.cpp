@@ -92,20 +92,32 @@ namespace Etc
 		switch (m_pfile->GetImageFormat())
 		{
 		case Image::Format::RGB8:
+            m_data.m_u32GlInternalFormat = (unsigned int)InternalFormat::ETC2_RGB8;
+            m_data.m_u32GlBaseInternalFormat = (unsigned int)BaseInternalFormat::ETC2_RGB8;
+            break;
+            
 		case Image::Format::SRGB8:
-			m_data.m_u32GlInternalFormat = (unsigned int)InternalFormat::ETC2_RGB8;
+			m_data.m_u32GlInternalFormat = (unsigned int)InternalFormat::ETC2_SRGB8;
 			m_data.m_u32GlBaseInternalFormat = (unsigned int)BaseInternalFormat::ETC2_RGB8;
 			break;
 
 		case Image::Format::RGBA8:
+            m_data.m_u32GlInternalFormat = (unsigned int)InternalFormat::ETC2_RGBA8;
+            m_data.m_u32GlBaseInternalFormat = (unsigned int)BaseInternalFormat::ETC2_RGBA8;
+            break;
+
 		case Image::Format::SRGBA8:
-			m_data.m_u32GlInternalFormat = (unsigned int)InternalFormat::ETC2_RGBA8;
+			m_data.m_u32GlInternalFormat = (unsigned int)InternalFormat::ETC2_SRGBA8;
 			m_data.m_u32GlBaseInternalFormat = (unsigned int)BaseInternalFormat::ETC2_RGBA8;
 			break;
 
 		case Image::Format::RGB8A1:
+            m_data.m_u32GlInternalFormat = (unsigned int)InternalFormat::ETC2_RGB8A1;
+            m_data.m_u32GlBaseInternalFormat = (unsigned int)BaseInternalFormat::ETC2_RGB8A1;
+            break;
+                
 		case Image::Format::SRGB8A1:
-			m_data.m_u32GlInternalFormat = (unsigned int)InternalFormat::ETC2_RGB8A1;
+			m_data.m_u32GlInternalFormat = (unsigned int)InternalFormat::ETC2_SRGB8_PUNCHTHROUGH_ALPHA1;
 			m_data.m_u32GlBaseInternalFormat = (unsigned int)BaseInternalFormat::ETC2_RGB8A1;
 			break;
 		

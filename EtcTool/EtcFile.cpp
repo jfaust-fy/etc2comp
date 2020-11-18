@@ -201,14 +201,26 @@ File::File(const char *a_pstrFilename, Format a_fileformat)
 	{
 		m_imageformat = Image::Format::RGB8;
 	}
+    else if (uiInternalFormat == (uint32_t)FileHeader_Ktx::InternalFormat::ETC2_SRGB8 && uiBaseInternalFormat == (uint32_t)FileHeader_Ktx::BaseInternalFormat::ETC2_RGB8)
+    {
+        m_imageformat = Image::Format::SRGB8;
+    }
 	else if (uiInternalFormat == (uint32_t)FileHeader_Ktx::InternalFormat::ETC2_RGB8A1 && uiBaseInternalFormat == (uint32_t)FileHeader_Ktx::BaseInternalFormat::ETC2_RGB8A1)
 	{
 		m_imageformat = Image::Format::RGB8A1;
 	}
+    else if (uiInternalFormat == (uint32_t)FileHeader_Ktx::InternalFormat::ETC2_SRGB8_PUNCHTHROUGH_ALPHA1 && uiBaseInternalFormat == (uint32_t)FileHeader_Ktx::BaseInternalFormat::ETC2_RGB8A1)
+    {
+        m_imageformat = Image::Format::SRGB8A1;
+    }
 	else if (uiInternalFormat == (uint32_t)FileHeader_Ktx::InternalFormat::ETC2_RGBA8 && uiBaseInternalFormat == (uint32_t)FileHeader_Ktx::BaseInternalFormat::ETC2_RGBA8)
 	{
 		m_imageformat = Image::Format::RGBA8;
 	}
+    else if (uiInternalFormat == (uint32_t)FileHeader_Ktx::InternalFormat::ETC2_SRGBA8 && uiBaseInternalFormat == (uint32_t)FileHeader_Ktx::BaseInternalFormat::ETC2_RGBA8)
+    {
+        m_imageformat = Image::Format::SRGBA8;
+    }
 	else if (uiInternalFormat == (uint32_t)FileHeader_Ktx::InternalFormat::ETC2_R11 && uiBaseInternalFormat == (uint32_t)FileHeader_Ktx::BaseInternalFormat::ETC2_R11)
 	{
 		m_imageformat = Image::Format::R11;
