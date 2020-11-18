@@ -26,3 +26,5 @@ add_executable(EtcTool ${SOURCES})
 
 target_link_libraries (EtcTool EtcLib)
 
+install(TARGETS EtcTool
+        RUNTIME DESTINATION bin)
